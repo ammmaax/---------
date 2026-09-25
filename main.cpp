@@ -88,9 +88,20 @@ public:
         return Count;
     }
 
-    bool compareArea(Reservoir other)
+    void Test(Reservoir b)
     {
-        return getArea() > other.getArea();
+    if (width * length > b.width * b.length)
+    {
+        cout << name << " Have bigger value" << endl;
+    }
+    else if (width * length < b.width * b.length)
+    {
+        cout << b.name << " Have bigger value" << endl;
+    }
+    else
+    {
+        cout << "They are same" << endl;
+    }
     }
 };
 
@@ -112,14 +123,7 @@ int main()
 
     cout << endl;
 
-    if (r1.compareArea(r2))
-    {
-        cout << r1.getName() << " Have bigger area." << endl;
-    }
-    else
-    {
-        cout << r2.getName() << " Have smaller area." << endl;
-    }
+    r1.Test(r2);
 
     cout << endl;
     cout << "Created objects: " << Reservoir::getCount() << endl;
